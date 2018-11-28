@@ -1,0 +1,27 @@
+﻿@model IEnumerable<dbBlowOut.Models.Instrument>
+
+@{
+    ViewBag.Title = "Rentals";
+}
+
+<h2>Rentals</h2>
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            string img = item.description + ".jpg";
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <a href="@Url.Action("Create", "Client", new { id = item.instrumentID })">
+                    <div class="thmbnailcontainer">
+                        <img src="~/Content/Graphics/@img" alt="Instrument" class="image">
+                        <div class="overlay">
+                            <div class="overlaytext text-center">@item.condition @item.description $@item.price/Month</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+</div>

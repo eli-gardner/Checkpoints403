@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Summary";
+}
+
+<h2>Summary</h2>
+
+<p>
+    Thanks for your order @ViewBag.Client.firstName!
+</p>
+<ul>
+    <li>Order ID: @ViewBag.Client.clientID</li>
+    <li>Instrument: @ViewBag.Instrument.description</li>
+    <li>Instrument Condition: @ViewBag.Instrument.condition</li>
+    <li>Monthly Price: $@ViewBag.Instrument.price.00</li>
+    <li>Total Price After 18 Months: $@ViewBag.YearPrice.00</li>
+</ul>
+<img src="~/Content/Graphics/@ViewBag.img" alt="Your favorite instrument" />

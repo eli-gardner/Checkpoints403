@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <div id="fade">
+        <h1>Welcome to Blow Out</h1>
+        <p class="lead">We blow our competitors out of the water</p>
+        <p><i>"It's easy to play any musical instrument: all you have to do is touch the right key at the right time and the instrument will play itself"</i>.  - Johann Sebastian Bach</p>
+    </div>
+    <p><a href="https://www.summerhaysmusic.com/" class="btn btn-primary btn-lg whiteLink">Learn more &raquo;</a></pclass="fade">
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Rentals</h2>
+        <p>See our wide selection of quality instruments available for rental. We offer competitive pricing and amazing customer service.</p>
+        @Html.ActionLink("Rentals", "Rentals", "Home", new { area = "" }, new { @class = "btn btn-primary btn-lg" })
+    </div>
+    <div class="col-md-4">
+        <img src="~/Content/Graphics/balalaikaBear.jpg" alt="The majestic bear playing his beloved balalaika. A representation of everything music." class="bearly" />
+    </div>
+    <div class="col-md-4">
+        <h2>Contact</h2>
+        <p>We are always happy to hear from our customers. You are our number 1 priority!</p>
+        @Html.ActionLink("Contact", "Index", "Contact", new { area = "" }, new { @class = "btn btn-primary btn-lg" })
+    </div>
+</div>
