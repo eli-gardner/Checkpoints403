@@ -1,0 +1,32 @@
+﻿@model dbBlowOut.Models.Client
+
+@{
+    ViewBag.Title = "Select";
+}
+
+<h2>Select</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <a href="@Url.Action("Create", "Client", new { id = ViewBag.Select })">
+                <div class="thmbnailcontainer">
+                    <img src="~/Content/Graphics/addUser.png" alt="New Client" class="image">
+                    <div class="overlay">
+                        <div class="overlaytext text-center">Add New Client</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <a href="@Url.Action("Existing", "Client", new { id = ViewBag.Select })">
+                <div class="thmbnailcontainer">
+                    <img src="~/Content/Graphics/findUser.png" alt="Existing Client" class="image">
+                    <div class="overlay">
+                        <div class="overlaytext text-center">Find Existing Client</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

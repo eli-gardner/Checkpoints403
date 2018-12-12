@@ -1,0 +1,74 @@
+﻿@model IEnumerable<dbBlowOut.Models.instrument>
+
+@{
+    ViewBag.Title = "UpdateData";
+}
+
+<h2>UpdateData</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Client.clientID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Client.firstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Client.lastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Client.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Client.phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.condition)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Client.clientID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Client.firstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Client.lastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Client.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Client.phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.condition)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.clientID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.clientID })
+        </td>
+    </tr>
+}
+
+</table>

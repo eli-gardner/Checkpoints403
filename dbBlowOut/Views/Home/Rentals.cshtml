@@ -1,4 +1,4 @@
-﻿@model IEnumerable<dbBlowOut.Models.Instrument>
+﻿@model IEnumerable<dbBlowOut.Models.instrument>
 
 @{
     ViewBag.Title = "Rentals";
@@ -13,7 +13,7 @@
             string img = item.description + ".jpg";
 
             <div class="col-lg-3 col-md-4 col-sm-6">
-                <a href="@Url.Action("Create", "Client", new { id = item.instrumentID })">
+                <a href="@Url.Action("Select", "Client", new { id = item.instrumentID })">
                     <div class="thmbnailcontainer">
                         <img src="~/Content/Graphics/@img" alt="Instrument" class="image">
                         <div class="overlay">

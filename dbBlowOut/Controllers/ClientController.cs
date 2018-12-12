@@ -15,6 +15,34 @@ namespace dbBlowOut.Controllers
     {
         private BlowOutContext db = new BlowOutContext();
 
+        //Selection View
+        public ActionResult Select(int? id)
+        {
+            instrument instrument = db.Instruments.Find(id);
+            ViewBag.Select = instrument.instrumentID;
+            return View();
+        }
+
+        //Select existing client
+        public ActionResult Existing(int? id)
+        {
+            //instrument instrument = db.Instruments.Find(id);
+            //ViewBag.Select = instrument.instrumentID;
+            ViewBag.Select = id;
+            return View(db.Clients);
+        }
+
+        //Assign existing client
+        public ActionResult Assign(int clientid, int? instid)
+        {
+            int cid = clientid;
+            instrument instrument = db.Instruments.Find(instid);
+            instrument.clientID = cid;
+            db.SaveChanges();
+
+            return RedirectToAction("Summary", new { ClientID = instrument.clientID, InstrumentID = instrument.instrumentID });
+        }
+
         // GET: Client
         public ActionResult Index()
         {
@@ -56,7 +84,7 @@ namespace dbBlowOut.Controllers
                 db.Clients.Add(client);
                 db.SaveChanges();
 
-                Instrument instrument = db.Instruments.Find(id);
+                instrument instrument = db.Instruments.Find(id);
                 instrument.clientID = client.clientID;
                 db.SaveChanges();
 
@@ -69,7 +97,7 @@ namespace dbBlowOut.Controllers
         public ActionResult Summary(int ClientID, int InstrumentID)
         {
             Client client = db.Clients.Find(ClientID);
-            Instrument instrument = db.Instruments.Find(InstrumentID);
+            instrument instrument = db.Instruments.Find(InstrumentID);
 
             ViewBag.Client = client;
             ViewBag.Instrument = instrument;

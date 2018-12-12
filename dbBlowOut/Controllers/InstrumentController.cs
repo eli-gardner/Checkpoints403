@@ -29,7 +29,7 @@ namespace dbBlowOut.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Instrument instrument = db.Instruments.Find(id);
+            instrument instrument = db.Instruments.Find(id);
             if (instrument == null)
             {
                 return HttpNotFound();
@@ -49,7 +49,7 @@ namespace dbBlowOut.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "instrumentID,description,condition,price,clientID")] Instrument instrument)
+        public ActionResult Create([Bind(Include = "instrumentID,description,condition,price,clientID")] instrument instrument)
         {
             if (ModelState.IsValid)
             {
@@ -69,7 +69,7 @@ namespace dbBlowOut.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Instrument instrument = db.Instruments.Find(id);
+            instrument instrument = db.Instruments.Find(id);
             if (instrument == null)
             {
                 return HttpNotFound();
@@ -83,7 +83,7 @@ namespace dbBlowOut.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "instrumentID,description,condition,price,clientID")] Instrument instrument)
+        public ActionResult Edit([Bind(Include = "instrumentID,description,condition,price,clientID")] instrument instrument)
         {
             if (ModelState.IsValid)
             {
@@ -102,7 +102,7 @@ namespace dbBlowOut.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Instrument instrument = db.Instruments.Find(id);
+            instrument instrument = db.Instruments.Find(id);
             if (instrument == null)
             {
                 return HttpNotFound();
@@ -115,7 +115,7 @@ namespace dbBlowOut.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Instrument instrument = db.Instruments.Find(id);
+            instrument instrument = db.Instruments.Find(id);
             db.Instruments.Remove(instrument);
             db.SaveChanges();
             return RedirectToAction("Index");

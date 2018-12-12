@@ -9,7 +9,7 @@ using System.Web;
 namespace dbBlowOut.Models
 {
     [Table("Instrument")]
-    public class Instrument
+    public class instrument
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

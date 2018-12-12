@@ -21,6 +21,9 @@
                     <li class="nav-item nav-link">@Html.ActionLink("Rentals", "Rentals", "Home", new { area = "" }, new { @class = "whiteLink" })</li>
                     <li class="nav-item nav-link">@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "whiteLink" })</li>
                     <li class="nav-item nav-link">@Html.ActionLink("Contact", "Index", "Contact", new { area = "" }, new { @class = "whiteLink" })</li>
+                    @if (User.Identity.IsAuthenticated) { <li class="nav-item nav-link">@Html.ActionLink("Logout", "SignOut", "Home", new { area = "" }, new { @class = "whiteLink" })</li> 
+                                                          <li class="nav-item nav-link">@Html.ActionLink("Tools", "UpdateData", "Home", new { area = "" }, new { @class = "whiteLink" })</li>}
+                    else { <li class="nav-item nav-link">@Html.ActionLink("Login", "Login", "Home", new { area = "" }, new { @class = "whiteLink" })</li> }
                 </ul>
             </div>
         </div>

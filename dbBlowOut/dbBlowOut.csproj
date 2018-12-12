@@ -174,8 +174,10 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Graphics\addUser.png" />
     <Content Include="Content\Graphics\balalaikaBear.jpg" />
     <Content Include="Content\Graphics\Clarinet.jpg" />
+    <Content Include="Content\Graphics\findUser.png" />
     <Content Include="Content\Graphics\Flute.jpg" />
     <Content Include="Content\Graphics\Saxophone.jpg" />
     <Content Include="Content\Graphics\stringquartet.gif" />
@@ -268,6 +270,12 @@
     <Content Include="Views\Client\Summary.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Contact\Email.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\UpdateData.cshtml" />
+    <Content Include="Views\Home\Edit.cshtml" />
+    <Content Include="Views\Home\Delete.cshtml" />
+    <Content Include="Views\Client\Select.cshtml" />
+    <Content Include="Views\Client\Existing.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -15,6 +15,6 @@ namespace dbBlowOut.DAL
         }
 
         public DbSet<Client> Clients { get; set; }
-        public DbSet<Instrument> Instruments { get; set; }
+        public DbSet<instrument> Instruments { get; set; }
     }
 }
